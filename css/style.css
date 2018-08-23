@@ -261,3 +261,13 @@ body {
 .product .product_list li .more p {
   line-height: 20px;
 }
+.faq {
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 25%;
+}
+.faq_btn {
+  width: 20%;
+  float: left;
+}
