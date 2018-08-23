@@ -1,0 +1,303 @@
+//out:style.css, compress:false
+@charset 'utf-8';
+
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+ul,li,ol{ list-style: none;}
+a{ text-decoration: none;}	
+img{ border: none; vertical-align: top;}
+table{ border-collapse: collapse;}
+html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
+.clear::after{ content:''; display:block; clear: both;}
+
+#header{ 
+	position:fixed;
+	background-color: #065c28;
+	width: 100%;
+	z-index:999;
+}	
+.h_center{ 
+	width: 1200px; 
+	margin: 0 auto;
+	//height: px;
+	
+	.h_logo{ 
+		width: 200px; 
+		padding: 15px;
+		margin: 0 30px;
+		float: left;
+		
+		img{ width: 100%;}	
+	}
+	.gnb{ 
+		float: right;
+		padding-top: 10px;
+		margin:20px 100px 0 0;
+		//background-color: #0ff;
+		
+		li{ 
+			float: left;
+			padding: 0 20px;
+			
+      &.on::after{
+				content: "";
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: #fff;
+				margin-top: 22px;
+				position: relative;
+				left: 0%;
+			}
+			
+			a{ 
+				color: #fff;
+				font-weight: bold;
+			}
+		}
+	}
+}	
+	
+#container{ height: 400%; }	
+	
+.campaign{
+	padding-top: 80px;
+	height: 25%;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	
+	.panel{
+		width: 300%;
+		height: 100%;
+		li{
+			width:33.333333%;
+			height: 100%;
+			background-repeat:no-repeat;
+			background-size: cover;
+			background-position: center center;
+			
+			&:nth-child(1){
+				background-image: url(../images/slide1.jpg);
+				
+			}		
+		}
+	}
+	
+
+	
+	.campaign_content{
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		top: 0; 
+		right:0;
+		color: #fff;
+		background-color: rgba(6,92,40,0.7);
+		padding: 120px 50px;
+		
+		h2{ 
+			padding: 30px 0 50px 0;
+			font-size: 32px;
+			line-height: 50px;
+		}
+		
+		.big{ 
+			font-size: 50px;
+			font-weight: bold;
+			display: inline-block;
+			margin: 0 130px 50px 0;
+			padding-bottom: 20px;
+			color: #fff;
+			border-bottom: 5px solid #fc0;
+		}
+//		.big::after{ 
+//			content:""; 
+//			display:block;
+//			width: 60%;
+//			height: 5px;
+//			background: #fc0;
+//			margin: 20px 0 ;
+//			position: relative;
+//			left: 10px;
+//		}
+		
+		.small{ 
+			font-size: 20px;
+		}
+		
+	}
+	
+}
+
+.intro{
+	height: 25%;
+	padding-top: 80px;
+	text-align: center; 
+	background: url(../images/bg2.jpg);
+	background-size: cover;
+	background-blend-mode: screen; 
+	background-color:#888;
+	background-attachment: fixed;
+	overflow: hidden;
+	
+	h2{ color: #333; margin-top: 60px; font-size: 35px;}
+	
+	.benefit_list{
+		width: 1000px; 
+		height: 100%;
+		margin: 30px auto;
+		background-image: url(../images/bg_bubbles.png);
+		background-position: right top;
+		background-size: cover;
+		
+		li{
+			width: 200px; 
+			height: 200px;
+			padding: 50px 0;	
+			border-radius: 50%;
+			float:left;
+			box-shadow: 2px 2px 10px #aaa;
+			border: 10px solid orange;
+			color: #333;
+			background-color:#fff;
+			
+			img{ padding-top: 20px;}
+			
+			&:nth-child(2n+1){
+				position:relative;
+				top: 130px;
+			}
+		}
+		
+	}
+}
+
+
+.product{
+	max-width: 1200px; 
+	height: 25%;
+	margin: 0 auto;
+	padding-top: 80px;
+	overflow: hidden;
+	
+	.product_img{ 
+		float: left;
+		width: 35%;
+		overflow: hidden;
+		
+	}
+	.product_img li{
+		display: none;
+		position: relative;
+		height: 100%;
+		
+			.glass{
+				width: 450px;
+			}
+			.pill{
+				position: relative;
+			}
+		
+		&:nth-child(1){
+			
+			display:block;
+			width: 100%; 
+			height: 100%;
+	
+			.pill{
+				width: 120px;
+				top: -500px;
+				//top: -450px;
+				left: 170px;
+			}
+		}
+		
+		&:nth-child(2){
+			
+			.pill{
+				width: 220px;
+				top: -400px;
+				//top: -320px;
+				left: 120px;
+				opacity: 0.7;
+			}
+		}
+		
+	}
+	
+	.product_right{
+		width: 65%;
+		height: 100%;
+		float:left;
+		text-align: center;
+		overflow: hidden;
+	}
+	
+	.product_list{ 
+		width: 100%;
+		height: 100%;
+		
+		li{
+			float: left;
+			width: 48%;
+			margin 0 1%;
+//			padding: 20px;
+			height: 100%;
+			position: relative;
+			bottom: 0;
+			
+			
+			
+			&:hover .bg{
+				height: 95%;
+			}
+			
+			&:hover .more{
+				display: table;
+			}
+			
+			.picture{
+				width: 80%;
+				position: absolute;
+				bottom: 70px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				img{
+					width:100%;
+				}
+			}
+			
+			.bg{
+				background-color: rgba(255,200,0,0.5);
+				border-radius: 30px 30px 0 0;
+				width: 100%;
+				height: 45%;
+				position: absolute;
+				bottom: 0px;
+				z-index: -1;
+				transition: all 0.5s;
+			}
+			
+			.more{
+				display:none;
+				position: absolute;
+				width: 100%;
+				padding: 20px 30px;
+				
+				h3{
+					margin-bottom: 20px;
+				}
+				p{
+					line-height: 20px;
+					
+				}
+			}
+
+		}
+	}
+	
+}
+
+
