@@ -1,7 +1,7 @@
 //out:style.css, compress:false
 @charset 'utf-8';
 
-*{ margin: 0; padding: 0; box-sizing: border-box;}
+*{ margin: 0; padding: 0; box-sizing: border-box; }
 ul,li,ol{ list-style: none;}
 a{ text-decoration: none;}	
 img{ border: none; vertical-align: top;}
@@ -16,13 +16,13 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 	z-index:999;
 }	
 .h_center{ 
-	width: 1200px; 
+	max-width: 1200px; 
 	margin: 0 auto;
-	//height: px;
+	height: 70px;
 	
 	.h_logo{ 
-		width: 200px; 
-		padding: 15px;
+		max-width: 180px; 
+		padding: 10px;
 		margin: 0 30px;
 		float: left;
 		
@@ -30,9 +30,9 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 	}
 	.gnb{ 
 		float: right;
-		padding-top: 10px;
-		margin:20px 100px 0 0;
-		//background-color: #0ff;
+		line-height: 70px;
+		margin-right:100px;
+//		background-color: #0ff;
 		
 		li{ 
 			float: left;
@@ -43,15 +43,19 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 				display: block;
 				width: 100%;
 				height: 2px;
-				background-color: #fff;
-				margin-top: 22px;
+				background-color: #fc0;
 				position: relative;
 				left: 0%;
+			}
+			&.on a{
+				color: #fc0;
 			}
 			
 			a{ 
 				color: #fff;
 				font-weight: bold;
+				display: block;
+				height: 100%;
 			}
 		}
 	}
@@ -60,27 +64,37 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 #container{ height: 400%; }	
 	
 .campaign{
-	padding-top: 80px;
+	padding-top: 70px;
 	height: 25%;
 	max-width: 100%;
 	margin: 0 auto;
 	position: relative;
-	overflow: hidden;
+//	overflow: hidden;
 	
 	.panel{
-		width: 300%;
+		width: 400%;
 		height: 100%;
+		margin-left: -300%;
 		li{
-			width:33.333333%;
+			width:25%;
 			height: 100%;
+			float: left;
 			background-repeat:no-repeat;
 			background-size: cover;
 			background-position: center center;
 			
 			&:nth-child(1){
 				background-image: url(../images/slide1.jpg);
-				
-			}		
+			}	
+			&:nth-child(2){
+				background-image: url(../images/slide4.jpg);
+			}
+			&:nth-child(3){
+				background-image: url(../images/slide3.jpg);
+			}
+			&:nth-child(4){
+				background-image: url(../images/slide5.jpg);
+			}
 		}
 	}
 	
@@ -111,16 +125,6 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 			color: #fff;
 			border-bottom: 5px solid #fc0;
 		}
-//		.big::after{ 
-//			content:""; 
-//			display:block;
-//			width: 60%;
-//			height: 5px;
-//			background: #fc0;
-//			margin: 20px 0 ;
-//			position: relative;
-//			left: 10px;
-//		}
 		
 		.small{ 
 			font-size: 20px;
@@ -134,10 +138,10 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 	height: 25%;
 	padding-top: 80px;
 	text-align: center; 
-	background: url(../images/bg2.jpg);
-	background-size: cover;
-	background-blend-mode: screen; 
-	background-color:#888;
+	background-image: url(../images/bg_bubbles.png);
+	background-size: 100%;
+//	background-blend-mode: screen; 
+//	background-color:#888;
 	background-attachment: fixed;
 	overflow: hidden;
 	
@@ -147,9 +151,7 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 		width: 1000px; 
 		height: 100%;
 		margin: 30px auto;
-		background-image: url(../images/bg_bubbles.png);
-		background-position: right top;
-		background-size: cover;
+
 		
 		li{
 			width: 200px; 
@@ -175,11 +177,22 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 
 
 .product{
-	max-width: 1200px; 
+	width:100%;
 	height: 25%;
-	margin: 0 auto;
+	
 	padding-top: 80px;
+	background: url(../images/bg2.jpg);
+	background-size: cover;
+	background-blend-mode: screen; 
+	background-color:#888;
+	background-attachment: fixed;
 	overflow: hidden;
+	
+	.product_center{
+		max-width: 1200px; 
+		margin: 0 auto;
+		height: 100%;
+	}
 	
 	.product_img{ 
 		float: left;
@@ -263,20 +276,20 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 				bottom: 70px;
 				left: 50%;
 				transform: translateX(-50%);
-
+				z-index: 2;
 				img{
 					width:100%;
 				}
 			}
 			
 			.bg{
-				background-color: rgba(255,200,0,0.5);
+				background-color: rgba(255,200,0,0.8);
 				border-radius: 30px 30px 0 0;
 				width: 100%;
 				height: 45%;
 				position: absolute;
 				bottom: 0px;
-				z-index: -1;
+				z-index: 1;
 				transition: all 0.5s;
 			}
 			
@@ -310,20 +323,20 @@ html,body{ height:100%; font-family: 'Nanum Gothic', 'Noto Sans', sans-serif;}
 	padding: 20px 0;
 }
 .faq_wrap{
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	height: 70%;
 }
 .faq_btn{
 	width: 30%;
 	height: 100%;
-	border-right: 1px solid #eee;
+	border-right: 1px solid #ccc;
 	float: left;
 	
 	li{
 		height: 50px;
 		text-align: center;
 		line-height: 50px;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid #ccc;
 		
 		
 		a{ 

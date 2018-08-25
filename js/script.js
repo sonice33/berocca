@@ -1,5 +1,51 @@
 $(document).ready(function(){
 	
+	//마우스휠 이벤트
+	var cont_top = new Array();
+	var scr_move = 0;
+	
+	for( var i = 0; i <= 3; i++){
+		cont_top[i] = $("#container > div").eq(i).offset().top;
+		console.log(cont_top[i]);
+	}
+
+	
+	$(window).scroll(function(){
+		
+		//현재 스크롤위치 담음
+		var scr_top = $(window).scrollTop();
+		
+		for( var i=0; i<=3; i++ ){
+			if( scr_top >= cont_top[i] && scr_top < cont_top[i+1] ){
+					scr_move = i;
+			}else if( scr_top >= cont_top[3] ){
+					scr_move = 3;
+			}	
+		}
+		
+	
+		$(".gnb li").removeClass("on");
+		$(".gnb li").eq(scr_move).addClass("on");
+	});
+	
+	//메뉴 클릭시 해당 영역으로 이동
+	$(".gnb li").click(function(){
+		scr_move = $(this).index();
+		
+		$("html,body").stop().animate({"scrollTop":cont_top[scr_move]});
+	});
+	
+	$("#container > div").mousewheel(function(event,delta){
+		
+		if(delta > 0){
+			var prev = $(this).prev().offset().top;
+			$("html, body").stop().animate({"scrollTop":prev});
+		}else if(delta < 0){
+			var next = $(this).next().offset().top;
+			$("html, body").stop().animate({"scrollTop":next});
+		}
+		
+	});
 	
 	//슬라이더 타이퍼
 	$("#typer").typer({
